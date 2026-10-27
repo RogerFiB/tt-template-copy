@@ -90,9 +90,9 @@
 //!
 
 `timescale 1ns/1ps
+import dvfs_pkg::*;
 
 module dvfs_decoder
-import dvfs_pkg::*;
     (
       input logic clk_i,
       input logic rstn_i,

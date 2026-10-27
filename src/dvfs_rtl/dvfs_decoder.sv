@@ -108,7 +108,7 @@
    // output dvfs_pkg::v_lt    v_ext1_o,
    // output dvfs_pkg::v_lt    v_ext2_o,
    // output dvfs_pkg::v_lt    v_ext3_o
-);
+// );
 
 module dvfs_decoder (
     input  logic        clk_i,

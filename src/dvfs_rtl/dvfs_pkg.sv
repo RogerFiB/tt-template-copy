@@ -105,7 +105,7 @@ package dvfs_pkg;
 
   parameter int V_CALC_WIDTH = V_GRAPH_WIDTH + F_GRAPH_WIDTH;
   // v_lt V_MAX = '1; // maximum possible value
-  logic [V_GRAPH_WIDTH-1:0] V_MAX = {V_GRAPH_WIDTH{1'b1}};
+  parameter logic [V_GRAPH_WIDTH-1:0] V_MAX = {V_GRAPH_WIDTH{1'b1}};
   
   parameter int CSR_WIDTH = 64;
   parameter int USED_BITS =        // add all fields widths

@@ -128,7 +128,7 @@ module dvfs_decoder (
     output logic [5:0]  v_ext2_o,
     output logic [5:0]  v_ext3_o
 );
-    import dvfs_pkg::*;
+ //   import dvfs_pkg::*;
 
     csr_fields_t csr;
     assign csr = csr_i; // maps input CSR register

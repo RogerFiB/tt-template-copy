@@ -6,6 +6,7 @@ project:
   discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description: "just_to_test" # One line description of what your project does
   language: "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  top_module: "dvfs_top_controller"
   clock_hz: 1000 # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.

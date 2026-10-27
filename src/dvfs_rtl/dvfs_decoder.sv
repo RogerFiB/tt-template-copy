@@ -91,25 +91,43 @@
 
 `timescale 1ns/1ps
 
-module dvfs_decoder (
-    input  logic clk_i,
-    input  logic rstn_i,
-    input  logic [63:0] csr_i,
-    input  logic dvfs_req_i,
-    input  logic dvfs_busy_i,
-
-    output dvfs_pkg::vreq_lt v_req_o,
-    output dvfs_pkg::f_lt    f_req_o,
-    output logic             dvfs_start_o,
-    output logic             check_bit_o,
-    output dvfs_pkg::m_lt    m_value_o,
-    output dvfs_pkg::n_lt    n_value_o,
-    output dvfs_pkg::v_lt    v_ext0_o,
-    output dvfs_pkg::v_lt    v_ext1_o,
-    output dvfs_pkg::v_lt    v_ext2_o,
-    output dvfs_pkg::v_lt    v_ext3_o
+// module dvfs_decoder (
+   // input  logic clk_i,
+   // input  logic rstn_i,
+   // input  logic [63:0] csr_i,
+   // input  logic dvfs_req_i,
+   // input  logic dvfs_busy_i,
+//
+  //  output dvfs_pkg::vreq_lt v_req_o,
+   // output dvfs_pkg::f_lt    f_req_o,
+   // output logic             dvfs_start_o,
+   // output logic             check_bit_o,
+   // output dvfs_pkg::m_lt    m_value_o,
+   // output dvfs_pkg::n_lt    n_value_o,
+   // output dvfs_pkg::v_lt    v_ext0_o,
+   // output dvfs_pkg::v_lt    v_ext1_o,
+   // output dvfs_pkg::v_lt    v_ext2_o,
+   // output dvfs_pkg::v_lt    v_ext3_o
 );
 
+module dvfs_decoder (
+    input  logic        clk_i,
+    input  logic        rstn_i,
+    input  logic [63:0] csr_i,
+    input  logic        dvfs_req_i,
+    input  logic        dvfs_busy_i,
+
+    output logic [1:0]  v_req_o,
+    output logic [5:0]  f_req_o,
+    output logic        dvfs_start_o,
+    output logic        check_bit_o,
+    output logic [5:0]  m_value_o,
+    output logic [5:0]  n_value_o,
+    output logic [5:0]  v_ext0_o,
+    output logic [5:0]  v_ext1_o,
+    output logic [5:0]  v_ext2_o,
+    output logic [5:0]  v_ext3_o
+);
     import dvfs_pkg::*;
 
     csr_fields_t csr;

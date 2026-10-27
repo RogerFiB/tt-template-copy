@@ -91,7 +91,7 @@
 
 `timescale 1ns/1ps
 
-module tt_um_dvfs_top_controller
+module dvfs_top_controller
   import dvfs_pkg::*;
 (
     input logic clk_i,

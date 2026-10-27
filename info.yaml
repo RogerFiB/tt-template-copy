@@ -16,17 +16,36 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
-  # Inputs
-  clk_i: ""
-  rstn_i: ""
-  csr_i[63:0]: ""
-  dvfs_req_i: ""
-  
+# Inputs
+  ui[0]: "clk_i"
+  ui[1]: "rstn_i"
+  ui[2]: "csr_i[0]"
+  ui[3]: "csr_i[1]"
+  ui[4]: "csr_i[2]"
+  ui[5]: "csr_i[3]"
+  ui[6]: "csr_i[4]"
+  ui[7]: "dvfs_req_i"
+
   # Outputs
-  f_clk_core_o: ""
-  dvfs_done_o: ""
+  uo[0]: "f_clk_core_o"
+  uo[1]: "dvfs_done_o"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
 
   # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
   
 # Do not change!
 yaml_version: 6

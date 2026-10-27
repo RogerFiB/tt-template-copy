@@ -114,7 +114,7 @@ module dvfs_decoder
     );
 
 
-    csr_fields_t csr;
+    dvfs_pkg::csr_fields_t csr;
     assign csr = csr_i; // maps input CSR register
 
     typedef enum logic [1:0]{

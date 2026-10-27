@@ -94,7 +94,7 @@
 module tt_um_dvfs_top_controller
   // import dvfs_pkg::*;
 (
-    input logic clk_i,
+    input logic clk,
     input logic rstn_i,
     input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
     input logic dvfs_req_i, // dvfs_req_i is assumed to be an output signal from sargantana
@@ -103,6 +103,9 @@ module tt_um_dvfs_top_controller
     output logic dvfs_done_o
   );
 
+logic clk_i;
+  assign clk_i = clk;
+  
   // outputs from decoder
     dvfs_pkg::vreq_lt v_req;
     dvfs_pkg::f_lt f_req;

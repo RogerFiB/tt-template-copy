@@ -92,12 +92,12 @@
 `timescale 1ns/1ps
 
 module dvfs_pll_model
-    import dvfs_pkg::*;
+    // import dvfs_pkg::*;
 (
     input logic clk_i,
     input logic rstn_i,
     input logic pll_start_i,
-    input f_lt f_sel_i,
+    input dvfs_pkg::f_lt f_sel_i,
 
     output logic f_pll_o,
     output logic pll_done_o

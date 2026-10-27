@@ -224,7 +224,7 @@ module dvfs_vf_checker
           end
           else
           begin
-            vdd_min_theo = v_lt'(vdd_min_theo_long);
+            vdd_min_theo = dvfs_pkg::v_lt'(vdd_min_theo_long);
           end
 
 

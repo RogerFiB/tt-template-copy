@@ -7,7 +7,14 @@ project:
   description: "just_to_test" # One line description of what your project does
   language: "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   top_module: "tt_um_dvfs_top_controller"
-  source_files: "src/dvfs_rtl/dvfs_decoder.sv src/dvfs_rtl/dvfs_pkg.sv src/dvfs_rtl/dvfs_pll_model.sv src/dvfs_rtl/dvfs_pss_model.sv src/dvfs_rtl/dvfs_top_controller.sv src/dvfs_rtl/dvfs_transition_ctrl.sv src/dvfs_rtl/dvfs_vf_checker.sv"
+  source_files:
+      - "src/dvfs_rtl/dvfs_decoder.sv"
+      - "src/dvfs_rtl/dvfs_pkg.sv"
+      - "src/dvfs_rtl/dvfs_pll_model.sv"
+      - "src/dvfs_rtl/dvfs_pss_model.sv"
+      - "src/dvfs_rtl/dvfs_top_controller.sv"
+      - "src/dvfs_rtl/dvfs_transition_ctrl.sv"
+      - "src/dvfs_rtl/dvfs_vf_checker.sv"
   clock_hz: 1000 # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.

@@ -92,12 +92,12 @@
 `timescale 1ns/1ps
 
 module dvfs_pss_model
-import dvfs_pkg::*;
+// import dvfs_pkg::*;
   (
     input logic clk_i,
     input logic rstn_i,
     input logic pss_start_i,
-    input vreq_lt v_sel_i,
+    input dvfs_pkg::vreq_lt v_sel_i,
 
     output logic pss_done_o
   );

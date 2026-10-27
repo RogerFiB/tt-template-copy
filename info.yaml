@@ -9,9 +9,9 @@ project:
   top_module: "tt_um_dvfs_top_controller"
   source_files:
       - "dvfs_rtl/dvfs_pkg.sv"
-      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_pll_model.sv"
       - "dvfs_rtl/dvfs_pss_model.sv"
+      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_top_controller.sv"
       - "dvfs_rtl/dvfs_transition_ctrl.sv"
       - "dvfs_rtl/dvfs_vf_checker.sv"

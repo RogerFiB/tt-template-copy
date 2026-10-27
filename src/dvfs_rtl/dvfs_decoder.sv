@@ -92,12 +92,12 @@
 `timescale 1ns/1ps
 
 module dvfs_decoder
-import dvfs_pkg::*;
+// import dvfs_pkg::*;
 
     (
       input logic clk_i,
       input logic rstn_i,
-      input logic [CSR_WIDTH-1:0] csr_i,
+        input logic [63:0] csr_i,
       input logic dvfs_req_i,
       input logic dvfs_busy_i,
 

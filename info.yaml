@@ -8,8 +8,8 @@ project:
   language: "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   top_module: "tt_um_dvfs_top_controller"
   source_files:
-      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_pkg.sv"
+      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_pll_model.sv"
       - "dvfs_rtl/dvfs_pss_model.sv"
       - "dvfs_rtl/dvfs_top_controller.sv"

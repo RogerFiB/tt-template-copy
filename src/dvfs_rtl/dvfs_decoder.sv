@@ -97,7 +97,7 @@ import dvfs_pkg::*;
     (
       input logic clk_i,
       input logic rstn_i,
-        input logic [63:0] csr_i,
+        input logic [4:0] csr_i,
       input logic dvfs_req_i,
       input logic dvfs_busy_i,
         

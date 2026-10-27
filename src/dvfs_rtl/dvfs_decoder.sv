@@ -92,7 +92,7 @@
 `timescale 1ns/1ps
 
 module dvfs_decoder
-// import dvfs_pkg::*;
+import dvfs_pkg::*;
 
     (
       input logic clk_i,
@@ -100,6 +100,7 @@ module dvfs_decoder
         input logic [63:0] csr_i,
       input logic dvfs_req_i,
       input logic dvfs_busy_i,
+        
       output vreq_lt v_req_o,
       output f_lt f_req_o,
       output logic dvfs_start_o,

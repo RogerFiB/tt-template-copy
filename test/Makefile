@@ -3,9 +3,9 @@
 
 # defaults
 SIM ?= icarus
-TOPLEVEL_LANG ?= verilog
+TOPLEVEL_LANG ?= SystemVerilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = src/dvfs_rtl/dvfs_decoder.sv src/dvfs_rtl/dvfs_pkg.sv src/dvfs_rtl/dvfs_pll_model.sv src/dvfs_rtl/dvfs_pss_model.sv src/dvfs_rtl/dvfs_top_controller.sv src/dvfs_rtl/dvfs_transition_ctrl.sv src/dvfs_rtl/dvfs_vf_checker.sv
 
 ifneq ($(GATES),yes)
 

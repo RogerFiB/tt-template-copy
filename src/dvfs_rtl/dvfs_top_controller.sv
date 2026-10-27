@@ -94,21 +94,20 @@
 module tt_um_dvfs_top_controller
   // import dvfs_pkg::*;
 (
-    input logic clk,
+    input logic clk_i,
     input logic rstn_i,
     input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
     input logic dvfs_req_i, // dvfs_req_i is assumed to be an output signal from sargantana
 
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
+    input  wire       clk,      // clock
+    input  wire       rst_n     // reset_n - low to reset
   
     output logic f_clk_core_o,
     output logic dvfs_done_o
   );
 
-logic clk_i;
-  assign clk_i = clk;
-
-  wire _unused = &{ena, 1'b0};
+  wire _unused = &{ena, clk, rst_n, 1'b0};
   
   // outputs from decoder
     dvfs_pkg::vreq_lt v_req;

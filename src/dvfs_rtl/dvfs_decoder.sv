@@ -92,24 +92,24 @@
 `timescale 1ns/1ps
 
 module dvfs_decoder
-import dvfs_pkg::*;
+// import dvfs_pkg::*;
     (
       input logic clk_i,
       input logic rstn_i,
-      input logic [CSR_WIDTH-1:0] csr_i,
+      input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i,
       input logic dvfs_req_i,
       input logic dvfs_busy_i,
 
-      output vreq_lt v_req_o,
-      output f_lt f_req_o,
+      output dvfs_pkg::vreq_lt v_req_o,
+      output dvfs_pkg::f_lt f_req_o,
       output logic dvfs_start_o,
       output logic check_bit_o,
-      output m_lt m_value_o,
-      output n_lt n_value_o,
-      output v_lt v_ext0_o,
-      output v_lt v_ext1_o,
-      output v_lt v_ext2_o,
-      output v_lt v_ext3_o
+      output dvfs_pkg::m_lt m_value_o,
+      output dvfs_pkg::n_lt n_value_o,
+      output dvfs_pkg::v_lt v_ext0_o,
+      output dvfs_pkg::v_lt v_ext1_o,
+      output dvfs_pkg::v_lt v_ext2_o,
+      output dvfs_pkg::v_lt v_ext3_o
 
     );
 

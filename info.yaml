@@ -10,9 +10,9 @@ project:
   source_files:
       - "dvfs_rtl/dvfs_pkg.sv"
       - "dvfs_rtl/dvfs_transition_ctrl.sv"
+      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_pll_model.sv"
       - "dvfs_rtl/dvfs_pss_model.sv"
-      - "dvfs_rtl/dvfs_decoder.sv"
       - "dvfs_rtl/dvfs_top_controller.sv"
       - "dvfs_rtl/dvfs_vf_checker.sv"
   clock_hz: 1000 # Clock frequency in Hz (or 0 if not applicable)

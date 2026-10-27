@@ -100,7 +100,6 @@ module dvfs_decoder
         input logic [63:0] csr_i,
       input logic dvfs_req_i,
       input logic dvfs_busy_i,
-
       output vreq_lt v_req_o,
       output f_lt f_req_o,
       output logic dvfs_start_o,

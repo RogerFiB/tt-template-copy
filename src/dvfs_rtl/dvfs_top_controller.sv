@@ -92,11 +92,11 @@
 `timescale 1ns/1ps
 
 module tt_um_dvfs_top_controller
-  import dvfs_pkg::*;
+  // import dvfs_pkg::*;
 (
     input logic clk_i,
     input logic rstn_i,
-    input logic [CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
+    input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
     input logic dvfs_req_i, // dvfs_req_i is assumed to be an output signal from sargantana
 
     output logic f_clk_core_o,
@@ -104,23 +104,23 @@ module tt_um_dvfs_top_controller
   );
 
   // outputs from decoder
-    vreq_lt v_req;
-    f_lt f_req;
+    dvfs_pkg::vreq_lt v_req;
+    dvfs_pkg::f_lt f_req;
     logic dvfs_start;
     logic check_bit;
-    m_lt m_value;
-    n_lt n_value;
-    v_lt v_ext0;
-    v_lt v_ext1;
-    v_lt v_ext2;
-    v_lt v_ext3;
+    dvfs_pkg::m_lt m_value;
+    dvfs_pkg::n_lt n_value;
+    dvfs_pkg::v_lt v_ext0;
+    dvfs_pkg::v_lt v_ext1;
+    dvfs_pkg::v_lt v_ext2;
+    dvfs_pkg::v_lt v_ext3;
 
     // outputs from vf_checker
     logic check_done;
     logic pll_start;
     logic pss_start;
-    vreq_lt v_sel;
-    f_lt f_sel;
+    dvfs_pkg::vreq_lt v_sel;
+    dvfs_pkg::f_lt f_sel;
 
     //outputs from PSS
     logic pss_done;

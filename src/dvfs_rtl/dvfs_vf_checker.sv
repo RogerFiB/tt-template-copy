@@ -92,26 +92,26 @@
 `timescale 1ns/1ps
 
 module dvfs_vf_checker
-import dvfs_pkg::*;
+// import dvfs_pkg::*;
 (
     input logic clk_i,
     input logic rstn_i,
-    input vreq_lt v_req_i,
-    input f_lt f_req_i,
+    input dvfs_pkg::vreq_lt v_req_i,
+    input dvfs_pkg::f_lt f_req_i,
     input logic dvfs_start_i,
     input logic check_bit_i,
-    input m_lt m_value_i,
-    input n_lt n_value_i,
-    input v_lt v_ext0_i,
-    input v_lt v_ext1_i,
-    input v_lt v_ext2_i,
-    input v_lt v_ext3_i,
+    input dvfs_pkg::m_lt m_value_i,
+    input dvfs_pkg::n_lt n_value_i,
+    input dvfs_pkg::v_lt v_ext0_i,
+    input dvfs_pkg::v_lt v_ext1_i,
+    input dvfs_pkg::v_lt v_ext2_i,
+    input dvfs_pkg::v_lt v_ext3_i,
     
     output logic check_done_o,
     output logic pll_start_o,
     output logic pss_start_o,
-    output vreq_lt v_sel_o,
-    output f_lt f_sel_o
+    output dvfs_pkg::vreq_lt v_sel_o,
+    output dvfs_pkg::f_lt f_sel_o
   );
 
 
@@ -120,20 +120,20 @@ import dvfs_pkg::*;
   logic e_pss;
 
   // internal registers to save previous V-f value
-  vreq_lt v_sel_prev;
-  f_lt f_sel_prev;
+  dvfs_pkg::vreq_lt v_sel_prev;
+  dvfs_pkg::f_lt f_sel_prev;
 
   // internal wires to calculate valid v-f pair
-  vreq_lt v_sel;
-  f_lt f_sel;
+  dvfs_pkg::vreq_lt v_sel;
+  dvfs_pkg::f_lt f_sel;
 
   // internal registers to save valid v-f pair
-  vreq_lt v_sel_curr;
-  f_lt f_sel_curr;
+  dvfs_pkg::vreq_lt v_sel_curr;
+  dvfs_pkg::f_lt f_sel_curr;
 
   // internal wires to calculate theoretical Vddmin for the requested frequency
-  logic [(V_CALC_WIDTH-1):0] vdd_min_theo_long;
-  v_lt vdd_min_theo;
+  logic [(dvfs_pkg::V_CALC_WIDTH-1):0] vdd_min_theo_long;
+  dvfs_pkg::v_lt vdd_min_theo;
 
   typedef enum  logic [1:0]{
             IDLE,
@@ -214,13 +214,13 @@ import dvfs_pkg::*;
         begin
           ////////// CHECK V-F PAIR VALIDITY //////////
 
-          vdd_min_theo_long = m_value_i * f_sel + {{(V_CALC_WIDTH-N_WIDTH){1'b0}}, n_value_i};
+          vdd_min_theo_long = m_value_i * f_sel + {{(dvfs_pkg::V_CALC_WIDTH-dvfs_pkg::N_WIDTH){1'b0}}, n_value_i};
 
           // if vdd_min_theo_long needs more bits than v_lt variable,
           // set it to the maximum possible voltage value
-          if (vdd_min_theo_long > {{(V_CALC_WIDTH-V_GRAPH_WIDTH){1'b0}}, V_MAX})
+          if (vdd_min_theo_long > {{(dvfs_pkg::V_CALC_WIDTH-dvfs_pkg::V_GRAPH_WIDTH){1'b0}}, dvfs_pkg::V_MAX})
           begin
-            vdd_min_theo = V_MAX;
+            vdd_min_theo = dvfs_pkg::V_MAX;
           end
           else
           begin

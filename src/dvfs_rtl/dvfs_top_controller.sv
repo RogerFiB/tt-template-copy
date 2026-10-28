@@ -94,10 +94,13 @@
 module tt_um_dvfs_top_controller
   // import dvfs_pkg::*;
 (
-    input logic clk_i,
-    input logic rstn_i,
-    input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
-    input logic dvfs_req_i, // dvfs_req_i is assumed to be an output signal from sargantana
+    // input logic clk_i,
+    // input logic rstn_i,
+    // input logic [dvfs_pkg::CSR_WIDTH-1:0] csr_i, // width = bits of the CSR register
+    // input logic dvfs_req_i, // dvfs_req_i is assumed to be an output signal from sargantana
+    
+    // output logic f_clk_core_o,
+    // output logic dvfs_done_o,
 
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
@@ -106,18 +109,41 @@ module tt_um_dvfs_top_controller
     output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
-    input  wire       rst_n,     // reset_n - low to reset
-    
-    output logic f_clk_core_o,
-    output logic dvfs_done_o
+    input  wire       rst_n     // reset_n - low to reset
+  
   );
 
+  wire clk_i;
+  wire rstn_i;
+  wire [dvfs_pkg::CSR_WIDTH-1:0] csr_i;
+  wire dvfs_req_i,
+
+  wire f_clk_core_o;
+  wire dvfs_done_o;
+
+  assign clk_i = ui_in[0];
+  assign rstn_i = ui_in[1];
+  assign dvfs_req_i = ui_in[2];
+  assign csr_i[0] = ui_in[3];
+  assign csr_i[1] = ui_in[4];
+  assign csr_i[2] = ui_in[5];
+  assign csr_i[3] = ui_in[6];
+  assign csr_i[4] = ui_in[7];
+
+  assign uo_out[0] = f_clk_core_o;
+  assign uo_out[1] = dvfs_done_o;
+  assign uo_out[1] = 0;
+  assign uo_out[1] = 0;
+  assign uo_out[1] = 0;
+  assign uo_out[1] = 0;
+  assign uo_out[1] = 0;
+  assign uo_out[1] = 0;
+  
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = 0;
   assign uio_out = 0;
   assign uio_oe  = 0;
   
-  wire _unused = &{ena, clk, rst_n, ui_in[7:0], uo_out[7:0], uio_in[7:0], uio_out[7:0], uio_oe[7:0], 1'b0};
+  wire _unused = &{ena, clk, rst_n, 1'b0};
   
   // outputs from decoder
     dvfs_pkg::vreq_lt v_req;

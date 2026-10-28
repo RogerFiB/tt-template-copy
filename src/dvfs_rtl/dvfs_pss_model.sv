@@ -128,7 +128,8 @@ module dvfs_pss_model
       else if(running)
       begin
 
-        if(cnt < PSS_LATENCY-1)
+        // if(cnt < PSS_LATENCY-1)
+        if(cnt < 4)
         begin
           cnt <= cnt + 1;
         end

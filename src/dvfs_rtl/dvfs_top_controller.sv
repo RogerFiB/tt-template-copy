@@ -102,12 +102,13 @@ module tt_um_dvfs_top_controller
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
     input  wire       rst_n,     // reset_n - low to reset
+    input  wire       ui_in,     // reset_n - low to reset
   
     output logic f_clk_core_o,
     output logic dvfs_done_o
   );
 
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, clk, rst_n, ui_in, 1'b0};
   
   // outputs from decoder
     dvfs_pkg::vreq_lt v_req;

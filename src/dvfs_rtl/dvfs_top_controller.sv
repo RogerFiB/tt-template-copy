@@ -254,7 +254,8 @@ dvfs_decoder decoder_inst(
 
     always_ff @(posedge clk_i)
     begin
-      dvfs_done_o <= dvfs_done;
+      // dvfs_done_o <= dvfs_done;
+      dvfs_done_o = dvfs_done;
     end
     
 endmodule

@@ -113,7 +113,7 @@ module tt_um_dvfs_top_controller
   
   );
 
-  wire clk_i;
+  // wire clk_i;
   wire rstn_i;
   wire [dvfs_pkg::CSR_WIDTH-1:0] csr_i;
   wire dvfs_req_i;
@@ -121,7 +121,7 @@ module tt_um_dvfs_top_controller
   wire f_clk_core_o;
   logic dvfs_done_o;
 
-  assign clk_i = clk;
+  // assign clk_i = clk;
   assign rstn_i = rst_n;
   assign dvfs_req_i = ui_in[7];
   assign csr_i[0] = ui_in[0];
@@ -180,7 +180,7 @@ module tt_um_dvfs_top_controller
 
 
 dvfs_decoder decoder_inst(
-    .clk_i(clk_i),
+    .clk_i(clk),
     .rstn_i(rstn_i),
     .csr_i(csr_i),
     .dvfs_req_i(dvfs_req_i),
@@ -199,7 +199,7 @@ dvfs_decoder decoder_inst(
 );    
 
   dvfs_vf_checker vf_checker_inst(
-    .clk_i(clk_i),
+    .clk_i(clk),
     .rstn_i(rstn_i),
     .v_req_i(v_req),
     .f_req_i(f_req),
@@ -220,7 +220,7 @@ dvfs_decoder decoder_inst(
     );
 
   dvfs_pss_model pss_model_inst(
-    .clk_i(clk_i),
+    .clk_i(clk),
     .rstn_i(rstn_i),
     .pss_start_i(pss_start),
     .v_sel_i(v_sel),
@@ -229,7 +229,7 @@ dvfs_decoder decoder_inst(
 );
 
   dvfs_pll_model pll_model_inst(
-    .clk_i(clk_i),
+    .clk_i(clk),
     .rstn_i(rstn_i),
     .pll_start_i(pll_start),
     .f_sel_i(f_sel),
@@ -239,7 +239,7 @@ dvfs_decoder decoder_inst(
 );
 
   dvfs_transition_ctrl transition_ctrl_inst(
-    .clk_i(clk_i),
+    .clk_i(clk),
     .rstn_i(rstn_i),
     .start_i(check_done),
     .pll_start_i(pll_start),
@@ -254,7 +254,7 @@ dvfs_decoder decoder_inst(
     // clock gating still pending here
     assign f_clk_core_o = f_pll;
 
-    always_ff @(posedge clk_i)
+    always_ff @(posedge clk)
     begin
       dvfs_done_o <= dvfs_done;
     end

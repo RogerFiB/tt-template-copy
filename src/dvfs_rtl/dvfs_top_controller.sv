@@ -132,12 +132,12 @@ module tt_um_dvfs_top_controller
   
   assign uo_out[0] = f_clk_core_o;
   assign uo_out[1] = dvfs_done_o;
-  assign uo_out[1] = 0;
-  assign uo_out[1] = 0;
-  assign uo_out[1] = 0;
-  assign uo_out[1] = 0;
-  assign uo_out[1] = 0;
-  assign uo_out[1] = 0;
+  assign uo_out[2] = 0;
+  assign uo_out[3] = 0;
+  assign uo_out[4] = 0;
+  assign uo_out[5] = 0;
+  assign uo_out[6] = 0;
+  assign uo_out[7] = 0;
   
   // All output pins must be assigned. If not used, assign to 0.
   assign uio_out = 0;

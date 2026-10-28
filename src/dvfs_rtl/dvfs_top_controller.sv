@@ -119,7 +119,7 @@ module tt_um_dvfs_top_controller
   wire dvfs_req_i;
 
   wire f_clk_core_o;
-  wire dvfs_done_o;
+  logic dvfs_done_o;
 
   assign clk_i = ui_in[0];
   assign rstn_i = ui_in[1];

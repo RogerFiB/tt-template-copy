@@ -131,7 +131,8 @@ module dvfs_pll_model
             else if(running)
             begin
 
-                if(cnt < PLL_LATENCY-1)
+                // if(cnt < PLL_LATENCY-1)
+                if(cnt < 2)
                 begin
                     cnt <= cnt + 1;
                 end

@@ -121,14 +121,16 @@ module tt_um_dvfs_top_controller
   wire f_clk_core_o;
   logic dvfs_done_o;
 
-  assign clk_i = ui_in[0];
-  assign rstn_i = ui_in[1];
-  assign dvfs_req_i = ui_in[2];
-  assign csr_i[0] = ui_in[3];
-  assign csr_i[1] = ui_in[4];
-  assign csr_i[2] = ui_in[5];
-  assign csr_i[3] = ui_in[6];
-  assign csr_i[4] = ui_in[7];
+  assign clk_i = clk;
+  assign rstn_i = rst_n;
+  assign dvfs_req_i = ui_in[7];
+  assign csr_i[0] = ui_in[0];
+  assign csr_i[1] = ui_in[1];
+  assign csr_i[2] = ui_in[2];
+  assign csr_i[3] = ui_in[3];
+  assign csr_i[4] = ui_in[4];
+  assign csr_i[5] = ui_in[5];
+  assign csr_i[6] = ui_in[6];
   
   assign uo_out[0] = f_clk_core_o;
   assign uo_out[1] = dvfs_done_o;
@@ -143,7 +145,7 @@ module tt_um_dvfs_top_controller
   assign uio_out = 0;
   assign uio_oe  = 0;
   
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, 1'b0};
   
   // outputs from decoder
     dvfs_pkg::vreq_lt v_req;

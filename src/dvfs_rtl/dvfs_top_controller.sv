@@ -118,9 +118,6 @@ module tt_um_dvfs_top_controller
   wire [dvfs_pkg::CSR_WIDTH-1:0] csr_i;
   wire dvfs_req_i,
 
-  wire f_clk_core_o;
-  wire dvfs_done_o;
-
   assign clk_i = ui_in[0];
   assign rstn_i = ui_in[1];
   assign dvfs_req_i = ui_in[2];
@@ -130,6 +127,9 @@ module tt_um_dvfs_top_controller
   assign csr_i[3] = ui_in[6];
   assign csr_i[4] = ui_in[7];
 
+  wire f_clk_core_o;
+  wire dvfs_done_o;
+  
   assign uo_out[0] = f_clk_core_o;
   assign uo_out[1] = dvfs_done_o;
   assign uo_out[1] = 0;
